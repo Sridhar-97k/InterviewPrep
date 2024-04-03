@@ -4,7 +4,7 @@
 #include<iostream>
 
 
-class ReverseVowelsInArray {
+class ReverseVowelsInWord{
 public:
 	bool isVowel(char s)
 	{
@@ -61,7 +61,7 @@ public:
 
 public: int perform()
 {
-	ReverseVowelsInArray solution;
+	ReverseVowelsInWord solution;
 	solution.reverseVowels("aaaai");
 
 	return 0;

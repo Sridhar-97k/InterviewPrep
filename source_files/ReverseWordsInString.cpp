@@ -40,7 +40,7 @@ public:
 public : int perform()
 	{
 		ReverseWordsInString solution;
-		cout << "\"" << solution.reverseWords(" a good   example") << "\"" << std::endl;
+		std::cout << "\"" << solution.reverseWords(" a good   example") << "\"" << std::endl;
 		return 0;
 	}
 };

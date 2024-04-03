@@ -1,11 +1,12 @@
 #include<iostream>
 #include "ReverseLinkListUsingRecursion.cpp"
 #include "ProductWithoutSelf.cpp"
+#include "Merge2Strings.cpp"
 
-using namespace LinkListFiles;
+
 int main()
 {
-	ProductWithoutSelf tryout;
+	Merge2Strings tryout;
 	tryout.perform();
 	return 0;
 }
