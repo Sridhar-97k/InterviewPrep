@@ -15,31 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="InterviewPrep.cpp">
+    <ClCompile Include="source_files\InterviewPrep.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\Arista Prep\CPP practice questions\templatefortheheader.txt">
+    <ClCompile Include="source_files\LinkListBubbleSort.cpp">
       <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="..\..\Arista Prep\CPP practice questions\vectormergesortedarray.cpp">
+    </ClCompile>
+    <ClCompile Include="source_files\ProductWithoutSelf.cpp">
       <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="..\..\Arista Prep\CPP practice questions\linkedlistbubblesort.cpp">
+    </ClCompile>
+    <ClCompile Include="source_files\ReverseLinkListUsingRecursion.cpp">
       <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="..\..\Arista Prep\CPP practice questions\productwithoutself.cpp">
+    </ClCompile>
+    <ClCompile Include="source_files\ReverseWordsInString.cpp">
       <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="..\..\Arista Prep\CPP practice questions\reverse ll using recursion.cpp">
+    </ClCompile>
+    <ClCompile Include="source_files\VectorMergeSortedArray.cpp">
       <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="..\..\Arista Prep\CPP practice questions\reverse vowels in array.cpp">
-      <Filter>Source Files</Filter>
-    </Text>
-    <Text Include="..\..\Arista Prep\CPP practice questions\reverse words in string.cpp">
-      <Filter>Source Files</Filter>
-    </Text>
+    </ClCompile>
   </ItemGroup>
 </Project>

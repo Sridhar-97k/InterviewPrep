@@ -2,6 +2,7 @@
 #include "ReverseLinkListUsingRecursion.cpp"
 #include "ProductWithoutSelf.cpp"
 #include "Merge2Strings.cpp"
+#include "ReverseVowelsInWord.cpp"
 
 
 int main()

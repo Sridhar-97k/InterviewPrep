@@ -23,7 +23,6 @@
     <ClCompile Include="source_files\LinkListBubbleSort.cpp" />
     <ClCompile Include="source_files\ProductWithoutSelf.cpp" />
     <ClCompile Include="source_files\ReverseLinkListUsingRecursion.cpp" />
-    <ClCompile Include="source_files\ReverseVowelsInArray.cpp" />
     <ClCompile Include="source_files\ReverseWordsInString.cpp" />
     <ClCompile Include="source_files\VectorMergeSortedArray.cpp" />
   </ItemGroup>
