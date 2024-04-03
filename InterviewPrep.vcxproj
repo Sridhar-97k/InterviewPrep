@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source_files\InterviewPrep.cpp" />
-    <ClCompile Include="source_files\LinkListBubbleSort {.cpp" />
+    <ClCompile Include="source_files\LinkListBubbleSort.cpp" />
     <ClCompile Include="source_files\ProductWithoutSelf.cpp" />
     <ClCompile Include="source_files\ReverseLinkListUsingRecursion.cpp" />
     <ClCompile Include="source_files\ReverseVowelsInArray.cpp" />
