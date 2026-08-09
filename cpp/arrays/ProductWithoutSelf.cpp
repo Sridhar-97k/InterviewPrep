@@ -123,3 +123,9 @@ public: int perform()
 	return 0;
 }
 };
+
+int main() {
+	ProductWithoutSelf solution;
+	solution.perform();
+	return 0;
+}

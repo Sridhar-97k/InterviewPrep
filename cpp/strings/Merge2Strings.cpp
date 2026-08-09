@@ -1,7 +1,8 @@
-#include<string>
-#include<iostream>
+#include <string>
+#include <iostream>
 using namespace std;
-class Merge2Strings {
+class Merge2Strings
+{
 public:
 	string mergeAlternately(string word1, string word2)
 	{
@@ -11,28 +12,29 @@ public:
 		int i = 0, j = 0;
 		for (;;)
 		{
-			if (((i + j) % 2 == 0)) 
+			if (((i + j) % 2 == 0))
 			{
-				if (i < word1.length()) {
+				if (i < word1.length())
+				{
 					result = result + word1.at(i);
 					std::cout << "The alphabet is " << word1.at(i) << std::endl;
 					i++;
 				}
-				else break;
-
+				else
+					break;
 			}
-			if (((i + j) % 2 == 1)) 
+			if (((i + j) % 2 == 1))
 			{
-				if (j < word2.length()) {
+				if (j < word2.length())
+				{
 					result = result + word2.at(j);
 					std::cout << "The alphabet is " << word2.at(j) << std::endl;
 					j++;
 				}
-				else break;
-
+				else
+					break;
 			}
 		}
-		
 
 		/// now add all the remaining elements in the first word
 
@@ -48,15 +50,20 @@ public:
 		}
 		std::cout << "The value of final result now is " << result << std::endl;
 		return result;
-
 	}
-public:  int perform()
-{
-	Merge2Strings solution;
-	solution.mergeAlternately("abc", "pqrstu");
-	return 0;
-}
 
-
+public:
+	int perform()
+	{
+		Merge2Strings solution;
+		solution.mergeAlternately("abc", "pqrstu");
+		return 0;
+	}
 };
 
+int main()
+{
+	Merge2Strings solution;
+	solution.perform();
+	return 0;
+}

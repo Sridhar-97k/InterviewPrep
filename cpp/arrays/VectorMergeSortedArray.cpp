@@ -65,3 +65,9 @@ public: int perform()
 
 }
 };
+
+int main() {
+	VectorMergeSortedArray solution;
+	solution.perform();
+	return 0;
+}

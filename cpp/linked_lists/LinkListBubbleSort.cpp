@@ -120,7 +120,8 @@ class LinkListBubbleSort {
 
 		}
 	}
-	int main_file2()
+public:
+	int perform()
 	{
 
 		Node* head = NULL;
@@ -135,9 +136,16 @@ class LinkListBubbleSort {
 		insertAtTheEndUsingDoublePointer(&head, rand() % 100);
 
 		displayList(head);
-		bubbleSort(&head);
+		// bubbleSort(&head);
 		displayList(head);
 		return 0;
 	}
 };
 
+
+
+int main() {
+	LinkListBubbleSort solution;
+	solution.perform();
+	return 0;
+}

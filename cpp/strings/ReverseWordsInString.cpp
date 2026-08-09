@@ -44,3 +44,9 @@ public : int perform()
 		return 0;
 	}
 };
+
+int main() {
+	ReverseWordsInString solution;
+	solution.perform();
+	return 0;
+}

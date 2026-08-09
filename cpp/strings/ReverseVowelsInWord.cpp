@@ -67,3 +67,9 @@ public: int perform()
 	return 0;
 }
 };
+
+int main() {
+	ReverseVowelsInWord solution;
+	solution.perform();
+	return 0;
+}
