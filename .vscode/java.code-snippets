@@ -1,0 +1,23 @@
+{
+  "Java interview solution": {
+    "scope": "java",
+    "prefix": "sol",
+    "body": [
+      "package com.prep.${1:strings};",
+      "",
+      "/** ${2:LeetCode NNNN - Problem Title} */",
+      "public class ${3:Solution} {",
+      "",
+      "\tpublic ${4:void} solve() {",
+      "\t\t$0",
+      "\t}",
+      "",
+      "\tpublic static void main(String[] args) {",
+      "\t\t${3:Solution} sol = new ${3:Solution}();",
+      "\t\tsol.solve();",
+      "\t}",
+      "}"
+    ],
+    "description": "Self-contained Java solution with a main() driver"
+  }
+}

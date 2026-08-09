@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C++: build & run current file",
+      "type": "shell",
+      "command": "if (!(Test-Path build)) { New-Item -ItemType Directory build | Out-Null }; g++ -std=c++14 -Wall -Wextra -g -Icpp/include \"${relativeFile}\" -o \"build/${fileBasenameNoExtension}.exe\"; if ($?) { & \"build/${fileBasenameNoExtension}.exe\" }",
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Compile the open .cpp with MinGW g++ into build/ and run it",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Java: build & run current file",
+      "type": "shell",
+      "command": "$src = \"${relativeFile}\"; $rel = $src -replace '^java[\\\\/]src[\\\\/]',''; $fqn = ($rel -replace '\\.java$','') -replace '[\\\\/]','.'; if (!(Test-Path build/java)) { New-Item -ItemType Directory build/java | Out-Null }; javac -d build/java -sourcepath java/src \"$src\"; if ($?) { java -cp build/java $fqn }",
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
+      "problemMatcher": ["$tsc"],
+      "group": "build",
+      "detail": "Compile the open .java into build/java and run its main class",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}
