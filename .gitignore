@@ -20,3 +20,7 @@ java/**/out/
 .settings/
 .classpath
 .project
+
+# Google Drive sync temp
+.tmp.driveupload/
+.tmp.drivedownload/

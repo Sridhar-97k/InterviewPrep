@@ -23,7 +23,7 @@ int matrixChainOrder(const vector<int> &dims)
 {
     if (dims.size() < 2)
         return 0;
-    return m(0, (int)dims.size() - 1, dims);
+    return m(0, dims.size() - 1, dims);
 }
 
 int main()

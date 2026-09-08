@@ -1,0 +1,14 @@
+# clang-format style for this repo. Tweak to taste.
+# Docs: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 100
+BreakBeforeBraces: Attach       # opening brace on the same line
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+PointerAlignment: Left          # int* p  (not int *p)
+SpacesBeforeTrailingComments: 2
+SortIncludes: false             # keep your #include order as-is

@@ -9,7 +9,7 @@ int m(int i, int j, const vector<int> &dims)
     if (i + 1 == j)
     {
 
-        M[i][j] == 0;
+        M[i][j] = 0;
         return 0;
     }
     if (M[i][j] != -1) // suposse for a call, we have calcualted, then we can refer it from the table

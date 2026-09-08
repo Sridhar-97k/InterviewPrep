@@ -11,7 +11,10 @@
           "args": ["-NoProfile", "-Command"]
         }
       },
-      "problemMatcher": ["$gcc"],
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": ["relative", "${workspaceFolder}"]
+      },
       "group": {
         "kind": "build",
         "isDefault": true
@@ -19,7 +22,8 @@
       "detail": "Compile the open .cpp with MinGW g++ into build/ and run it",
       "presentation": {
         "reveal": "always",
-        "panel": "shared"
+        "panel": "shared",
+        "clear": true
       }
     },
     {
@@ -37,6 +41,26 @@
       "detail": "Compile the open .java into build/java and run its main class",
       "presentation": {
         "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "C++: build current file (debug)",
+      "type": "shell",
+      "command": "if (!(Test-Path build)) { New-Item -ItemType Directory build | Out-Null }; g++ -std=c++14 -Wall -Wextra -g -Icpp/include \"${relativeFile}\" -o \"build/${fileBasenameNoExtension}.exe\"",
+      "options": {
+        "shell": {
+          "executable": "powershell.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": ["relative", "${workspaceFolder}"]
+      },
+      "detail": "Compile the open .cpp with -g into build/ (no run) for debugging",
+      "presentation": {
+        "reveal": "silent",
         "panel": "shared"
       }
     }
