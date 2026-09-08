@@ -1,11 +1,18 @@
 {
-  "name": "InterviewPrep C++",
+  "name": "InterviewPrep C++/Java",
   // Debian C++ image ships g++, gdb, cmake, and clang tools preinstalled.
   "image": "mcr.microsoft.com/devcontainers/cpp:1-debian-12",
+  // Add a JDK so the Java extensions and the Java build task actually work.
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.cpptools"
+        "ms-vscode.cpptools-extension-pack",
+        "vscjava.vscode-java-pack"
       ],
       "settings": {
         // Use the "Linux" entry from c_cpp_properties.json in the container
@@ -16,5 +23,5 @@
     }
   },
   // Sanity-check the toolchain when the container is created
-  "postCreateCommand": "g++ --version && gdb --version | head -1"
+  "postCreateCommand": "g++ --version && gdb --version | head -1 && java --version"
 }
