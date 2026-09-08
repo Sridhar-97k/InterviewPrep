@@ -1,0 +1,20 @@
+{
+  "name": "InterviewPrep C++",
+  // Debian C++ image ships g++, gdb, cmake, and clang tools preinstalled.
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-debian-12",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools"
+      ],
+      "settings": {
+        // Use the "Linux" entry from c_cpp_properties.json in the container
+        "C_Cpp.default.compilerPath": "/usr/bin/g++",
+        "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+        "C_Cpp.default.cppStandard": "c++17"
+      }
+    }
+  },
+  // Sanity-check the toolchain when the container is created
+  "postCreateCommand": "g++ --version && gdb --version | head -1"
+}
