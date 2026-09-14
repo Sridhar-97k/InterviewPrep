@@ -4,7 +4,7 @@ package com.prep.strings;
  * LeetCode 344 - Reverse String.
  * Two-pointer in-place swap. Time O(n), space O(1).
  */
-public class ReverseString {
+public class LC0344ReverseString {
 
     public void reverseString(char[] s) {
         int left = 0, right = s.length - 1;
@@ -18,7 +18,7 @@ public class ReverseString {
     }
 
     public static void main(String[] args) {
-        ReverseString sol = new ReverseString();
+        LC0344ReverseString sol = new LC0344ReverseString();
         char[] input = {'h', 'e', 'l', 'l', 'o'};
         sol.reverseString(input);
         System.out.println(new String(input)); // olleh
