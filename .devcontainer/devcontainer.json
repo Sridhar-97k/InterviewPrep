@@ -23,5 +23,5 @@
     }
   },
   // Sanity-check the toolchain when the container is created
-  "postCreateCommand": "g++ --version && gdb --version | head -1 && java --version"
+  "postCreateCommand": "g++ --version && gdb --version | head -1 && java --version && mkdir -p /tmp/interviewprep-java-check && find java/src -name '*.java' -print0 | xargs -0 javac -d /tmp/interviewprep-java-check"
 }
