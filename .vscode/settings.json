@@ -11,5 +11,10 @@
     "editor.defaultFormatter": "ms-vscode.cpptools",
     "editor.formatOnSave": true
   },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+    "editor.formatOnSave": true
+  },
+  "java.debug.settings.enableRunDebugCodeLens": false,
   "editor.formatOnPaste": true
 }
