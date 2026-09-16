@@ -2,16 +2,37 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Run current Java or C++ file",
+      "type": "shell",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "detail": "Compile and run the active Java or C++ file without changing launch.json",
+      "linux": {
+        "command": "f=\"${relativeFile}\"; case \"$f\" in *.java) fqn=$(printf '%s' \"$f\" | sed 's#^java/src/##; s#\\.java$##; s#/#.#g'); mkdir -p build/java && javac -d build/java -sourcepath java/src \"$f\" && java -cp build/java \"$fqn\" ;; *.cpp) mkdir -p build && g++ -std=c++17 -Wall -Wextra -g -Icpp/include \"$f\" -o \"build/${fileBasenameNoExtension}\" && \"./build/${fileBasenameNoExtension}\" ;; *) echo \"Unsupported file type: $f\"; exit 1 ;; esac"
+      },
+      "windows": {
+        "command": "$src = '${relativeFile}'; if ($src.EndsWith('.java')) { $rel = $src -replace '^java[\\\\/]src[\\\\/]',''; $fqn = ($rel -replace '\\.java$','') -replace '[\\\\/]','.'; if (!(Test-Path build/java)) { New-Item -ItemType Directory build/java | Out-Null }; javac -d build/java -sourcepath java/src $src; if ($?) { java -cp build/java $fqn }; exit $LASTEXITCODE }; if ($src.EndsWith('.cpp')) { if (!(Test-Path build)) { New-Item -ItemType Directory build | Out-Null }; g++ -std=c++14 -Wall -Wextra -g -Icpp/include $src -o build/${fileBasenameNoExtension}.exe; if ($?) { & build/${fileBasenameNoExtension}.exe }; exit $LASTEXITCODE }; Write-Error ('Unsupported file type: ' + $src); exit 1",
+        "options": {
+          "shell": { "executable": "powershell.exe", "args": ["-NoProfile", "-Command"] }
+        }
+      }
+    },
+    {
       "label": "C++: build & run current file",
       "type": "shell",
       "problemMatcher": {
         "base": "$gcc",
         "fileLocation": ["relative", "${workspaceFolder}"]
       },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "group": "build",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
@@ -51,7 +72,7 @@
       }
     },
     {
-      "label": "Java: build & run current file",
+      "label": "Java: run current file (no launch config)",
       "type": "shell",
       "problemMatcher": [],
       "group": "build",
@@ -59,9 +80,9 @@
         "reveal": "always",
         "panel": "shared"
       },
-      "detail": "Compile the open .java into build/java and run its main class",
+      "detail": "Compile and run the open .java without changing launch.json",
       "linux": {
-        "command": "f=\"${relativeFile}\"; rel=\"${f#java/src/}\"; fqn=$(echo \"${rel%.java}\" | tr '/' '.'); mkdir -p build/java && javac -d build/java -sourcepath java/src \"$f\" && java -cp build/java \"$fqn\""
+        "command": "f=\"${relativeFile}\"; fqn=$(printf '%s' \"$f\" | sed 's#^java/src/##; s#\\.java$##; s#/#.#g'); mkdir -p build/java && javac -d build/java -sourcepath java/src \"$f\" && java -cp build/java \"$fqn\""
       },
       "windows": {
         "command": "$src = \"${relativeFile}\"; $rel = $src -replace '^java[\\\\/]src[\\\\/]',''; $fqn = ($rel -replace '\\.java$','') -replace '[\\\\/]','.'; if (!(Test-Path build/java)) { New-Item -ItemType Directory build/java | Out-Null }; javac -d build/java -sourcepath java/src \"$src\"; if ($?) { java -cp build/java $fqn }",
